@@ -2,11 +2,13 @@ filetype on
 syntax on
 set number
 set colorcolumn=79
-highlight ColorColumn ctermbg=magenta
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+
 colorscheme rose-pine-{dark,light}
 
-"   REMAPS
+" inoremaps
+inoremap Y "*yy
+
 inoremap {{ <Esc>$a<Space>{<Enter>
 
 inoremap ;j <Esc>$a;<Enter>
@@ -31,3 +33,15 @@ inoremap ÚÚ <C-o>A<Space>==<Space>
 "   faster escape
 inoremap kj <C-C>
 inoremap jk <C-C>
+
+if has("autocmd")
+  filetype on
+  autocmd FileType zsh setlocal ts=2 sts=2 sw=2 et
+endif
+
+" Tim Pope's unimpaired.vim
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ]B :blast<CR>
+

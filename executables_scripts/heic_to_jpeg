@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+for file in $( ls | grep -i .heic )
+do
+  name=$( echo $file | cut -f1 -d. )
+  sips \
+    -s format jpeg \
+    --resampleWidth 1080 \
+    --out $name.jpeg \
+    $file
+done
+

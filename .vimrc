@@ -6,8 +6,10 @@ set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 colorscheme rose-pine-{dark,light}
 
+" nmaps
+nmap Y "*yy
+
 " inoremaps
-inoremap Y "*yy
 
 inoremap {{ <Esc>$a<Space>{<Enter>
 

@@ -2,12 +2,25 @@ filetype on
 syntax on
 set number
 set colorcolumn=79
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+" set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set relativenumber " cursor = 0
+set nu " show current line number
+set hidden " keep buffers open
+set nowrap
+set incsearch
+set scrolloff=8
 
 colorscheme rose-pine-{dark,light}
 
 " nmaps
 nmap Y "*yy
+
+" xnoremap (visual mode remap)
+xnoremap Y "*y
 
 " inoremaps
 

@@ -24,6 +24,7 @@ xnoremap Y "*y
 
 " inoremaps
 
+inoremap <Tab><Tab> <Esc>A
 inoremap {{ <Esc>$a<Space>{<Enter>
 
 inoremap ;j <Esc>$a;<Enter>

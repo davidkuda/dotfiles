@@ -1,0 +1,45 @@
+time	ses	dir	cmd
+21/07	177	~/.aws	brew install --cask 1password/tap/1password-cli
+21/07	177	~/.aws	brew install jq
+21/07	183	~/code/repos/data-infrastructure/src/staging/us-east-1/redshift_david	brew install ffmpeg
+26/07	194	~/code/repos/api-log-processing	/opt/homebrew/bin/python3 /Users/davidkuda/code/repos/api-log-processing/lambda/handler/netlify-logs/test.py
+05/08	221	~/code/repos/data-infrastructure/src/staging/us-east-1/redshift	brew install graphviz
+08/08	240	~/code/repos/data-infrastructure/src/staging/us-east-1/redshift	brew install diff-so-fancy
+09/08	247	~/code/repos/data-infrastructure/src/production/us-east-1/redshift	brew list
+09/08	247	~/code/repos/data-infrastructure/src/production/us-east-1/redshift	brew list | docker
+09/08	247	~/code/repos/data-infrastructure/src/production/us-east-1/redshift	brew list | grep docker
+15/08	273	~	brew list | grep jq
+16/09	546	~/code/projects/wiz_scan	brew install coreutils
+18/09	556	~/code/repos/dotfiles	v brew_installs
+18/09	557	~/code/repos/dotfiles	v brew_installs.md
+24/09	618	~/code/projects/go_intro	brew install tree
+25/09	618	~/.config/nvim	brew list 
+25/09	618	~/.config/nvim	brew list  | postg
+25/09	618	~/.config/nvim	brew list  | grep postg
+25/09	620	~/.config/nvim	brew install htop
+25/09	620	~/.config/nvim	brew install ncdu
+29/09	661	~/code/repos/intercom-webhook-to-sns	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+06/10	691	~/code/repos/intercom-webhook-to-sns	brew list
+06/10	691	~/code/repos/intercom-webhook-to-sns	brew uninstall python
+06/10	691	~/code/repos/intercom-webhook-to-sns	brew update python
+06/10	691	~/code/repos/intercom-webhook-to-sns	brew upgrade python
+13/10	724	~/code/repos/intercom-webhook-to-sns	brew install pipenv
+19/10	751	~/Desktop	brew tap dbt-labs/dbt
+19/10	751	~/Desktop	brew install dbt-redshift
+20/10	759	~	brew install int128/kubelogin/kubelogin
+20/10	759	~	brew install kubectl
+20/10	759	~	brew install krew
+20/10	759	~	brew install helm
+28/10	821	~/code/repos/data-infrastructure/src/production/us-east-1/airflow	brew install fzf
+28/10	821	~/code/repos/data-infrastructure/src/production/us-east-1/airflow	$(brew --prefix)/opt/fzf/install
+03/11	862	~/code/repos/data-infrastructure/src/modules/ssh_bastion	brew tap xen0l/homebrew-taps
+			brew install aws-gate
+03/11	859	~/code/repos/data-infrastructure/src/modules/ssh_bastion	brew install --cask session-manager-plugin
+03/11	864	~/.ssh	cd /opt/homebrew/bin/aws-gate
+05/11	906	~/code/repos/colinkspace	brew install --cask alt-tab
+05/11	906	~/code/repos/colinkspace	brew upgrade
+18/11	967	~/code/repos/data-infrastructure/src/staging/us-east-1/redshift_david	brew install terraform-rover
+23/11	1003	~/code/repos/data-infrastructure/src/staging/us-east-1/redshift	brew install --cask anki
+25/11	1018	~/.oh-my-zsh	brew install git
+30/11	1051	~/.oh-my-zsh/custom	brew install kubectx
+(showing 42 of 59 results)

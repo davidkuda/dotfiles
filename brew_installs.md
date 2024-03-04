@@ -21,4 +21,6 @@ brew install tmux
 
 # Apps
 brew install --cask karabiner-elements
+brew install --cask alt-tab
+brew install --cask anki
 ```

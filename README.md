@@ -1,7 +1,7 @@
 run:
 
 ```sh
-sh -c $(curl -fsSL https://raw.githubusercontent.com/davidkuda/dotfiles/main/.tmux.conf)
+sh -c $(curl -fsSL https://raw.githubusercontent.com/davidkuda/dotfiles/main/setup.sh)
 ```
 
 More interesting things that are not yet automated:

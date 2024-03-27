@@ -9,3 +9,7 @@ then
     tmux new-session -A -s "$USER"
 fi
 
+function L {
+  $@ | less -S
+}
+

@@ -1,0 +1,11 @@
+
+export EDITOR=vim
+
+# -A -> makes new-session behave like attach-session
+# if session-name already exists
+# -s -> session name
+if [[ -z $TMUX ]]
+then
+    tmux new-session -A -s "$USER"
+fi
+

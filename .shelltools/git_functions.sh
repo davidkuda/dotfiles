@@ -1,3 +1,11 @@
+unalias gm
+# gm == git commit --message "..."
+function gm {
+    # $@ represents "all arguments"
+    commit_msg=$@
+    git commit --message "$@"
+}
+
 # gbcp -> git branch cp -> Copy a branch to your clipboard
 function gbcp {
     branches=$(git branch | cat -n)

@@ -1,23 +1,25 @@
-bindkey -v
-bindkey '^x^x' edit-command-line
+# --- aliases --- #
 
+# Varia
+alias n='nvim .'
+alias v=nvim
+alias ohmy='~/.oh-my-zsh/custom/'
+alias ccp='xclip -selection clipboard'
+alias ls=lsd
 
-# kafka config search
-function kf {
-  key=$( \
-    sqlite3 ~/code/repos/kafka-config-search/kafka-cfg.db \
-        'select title from kafka_config;' \
-      | fzf \
-  )
+# confs
+alias confz='nvim $HOME/.oh-my-zsh/custom/'
+alias conft='nvim $HOME/.tmux.conf'
+alias confn='nvim $HOME/.config/nvim/'
 
-  echo ""
-  echo "    $key:"
-  echo ""
-  sqlite3 ~/code/repos/kafka-config-search/kafka-cfg.db \
-      "select description from kafka_config where title = '$key'" \
-    | fold --spaces \
-    | sed 's/^/    /'
-  echo ""
-}
-
+# --- env vars --- #
+export EDITOR=vim
+export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="$PATH:/home/davidkuda/.local/bin"
+export DELTA_PAGER='less -R'
+export C='/mnt/c/Users/david.kuda/Desktop/'
+# MiniForge:
+export conda=$HOME/miniforge3/bin/conda
+# Go:
+export PATH=$PATH:/usr/local/go/bin
 

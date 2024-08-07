@@ -1,3 +1,8 @@
+if [[ -z $TMUX ]]
+then
+    tmux new-session -A -s "$USER"
+fi
+
 function tmux_toggle_popup {
   # Get the current session name
   CURRENT_SESSION=$(tmux display-message -p '#S')
@@ -17,6 +22,7 @@ function tmux_toggle_popup {
   fi
 }
 
+# doesn't work...
 bindkey '^a' tmux_toggle_popup
 
 # This function will be called every time the directory changes:

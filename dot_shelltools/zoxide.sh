@@ -1,3 +1,5 @@
+eval "$(zoxide init zsh)"
+
 _z_cd() {
     cd "$@" || return "$?"
 

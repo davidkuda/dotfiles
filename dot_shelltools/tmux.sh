@@ -1,3 +1,12 @@
+# Make sure to put this at the top of your config file:
+if [[ $TERM_PROGRAM != "tmux" ]]; then
+    if [[ $VSCODE_INJECTION ]]; then
+        tmux new-session -A -s $(pwd | xargs basename)
+    else
+        tmux new-session -A -s "$USER"
+    fi
+fi
+
 if [[ -z $TMUX ]]
 then
     tmux new-session -A -s "$USER"

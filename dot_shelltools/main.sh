@@ -15,7 +15,8 @@ alias confn='nvim $HOME/.config/nvim/'
 # --- env vars --- #
 export EDITOR=vim
 export PATH="$PATH:/opt/nvim-linux64/bin"
-export PATH="$PATH:/home/davidkuda/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/go/bin"
 export DELTA_PAGER='less -R'
 export C='/mnt/c/Users/david.kuda/Desktop/'
 # MiniForge:

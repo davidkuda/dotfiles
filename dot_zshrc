@@ -1,5 +1,5 @@
 for f in $(ls .shelltools); do
-    source shelltools/$f
+    source .shelltools/$f
 done
 
 bindkey -v

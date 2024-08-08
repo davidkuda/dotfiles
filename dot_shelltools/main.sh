@@ -5,7 +5,7 @@ alias n='nvim .'
 alias v=nvim
 alias ohmy='~/.oh-my-zsh/custom/'
 alias ccp='xclip -selection clipboard'
-alias ls=lsd
+# alias ls=lsd
 
 # confs
 alias confz='nvim $HOME/.oh-my-zsh/custom/'

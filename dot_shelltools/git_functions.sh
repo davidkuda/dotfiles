@@ -1,4 +1,3 @@
-# unalias gm
 # gm == git commit --message "..."
 function gm {
     # $@ represents "all arguments"

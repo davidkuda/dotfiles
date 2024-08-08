@@ -6,7 +6,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 for f in $(ls $HOME/.shelltools); do
-    source $HOME/.shelltools/$f
+    if [[ $f == *.sh ]]; then
+      source $HOME/.shelltools/$f
+    fi
 done
 
 bindkey -v

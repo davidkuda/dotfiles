@@ -1,3 +1,8 @@
+alias gco='git checkout branch'
+alias gl='git pull'
+alias gp='git push'
+
+
 # gm == git commit --message "..."
 function gm {
     # $@ represents "all arguments"

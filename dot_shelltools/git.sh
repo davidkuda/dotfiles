@@ -7,7 +7,7 @@ alias gp='git push'
 function gm {
     # $@ represents "all arguments"
     commit_msg=$@
-    git commit --message "$@"
+    git commit --message "$commit_msg"
 }
 
 # gbcp -> git branch cp -> Copy a branch to your clipboard

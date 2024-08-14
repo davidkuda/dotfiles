@@ -80,7 +80,7 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldcolumn = "1"
 vim.opt.foldlevel = 42
-vim.opt.foldlevelstart = 2
+vim.opt.foldlevelstart = 42
 vim.opt.foldnestmax = 4
 function _G.CustomFoldText()
     local line = vim.fn.getline(vim.v.foldstart)

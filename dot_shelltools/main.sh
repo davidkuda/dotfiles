@@ -11,9 +11,10 @@ alias conda=$HOME/miniforge3/bin/conda
 alias la='ls -lisah'
 
 # confs
-alias confz='nvim $HOME/.oh-my-zsh/custom/'
-alias conft='nvim $HOME/.tmux.conf'
-alias confn='nvim $HOME/.config/nvim/'
+alias confz='nvim $HOME/.local/share/chezmoi/'
+alias conft='nvim $HOME/.local/share/chezmoi/dot_tmux.conf'
+alias confn='nvim $HOME/.local/share/chezmoi/dot_config/nvim/'
+alias chere='chezmoi apply && exec zsh'
 
 # --- env vars --- #
 export EDITOR=vim

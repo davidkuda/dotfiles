@@ -10,6 +10,13 @@ return {
       require('auto-save').setup {
         -- your config goes here
         -- or just leave it empty :)
+        -- make it compatible with harpoon (https://github.com/ThePrimeagen/harpoon/issues/434):
+        condition = function(buf)
+          if vim.bo[buf].filetype == 'harpoon' then
+            return false
+          end
+          -- ... the rest of your condition code
+        end,
       }
     end,
   },
@@ -38,7 +45,7 @@ return {
     'folke/todo-comments.nvim',
     event = 'VimEnter',
     dependencies = { 'nvim-lua/plenary.nvim' },
-    opts = { signs = false }
+    opts = { signs = false },
   },
   {
     'windwp/nvim-autopairs',
@@ -53,10 +60,10 @@ return {
       overlay_opacity = 70,
       opacity_step = 1,
       keys = {
-        brightness_up    = '<Leader>hk',
-        brightness_down  = '<Leader>hk',
-        toggle           = '<Leader>ht',
-      }
-    }
-  }
+        brightness_up = '<Leader>hk',
+        brightness_down = '<Leader>hk',
+        toggle = '<Leader>ht',
+      },
+    },
+  },
 }

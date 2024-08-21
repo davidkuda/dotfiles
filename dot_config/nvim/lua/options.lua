@@ -78,7 +78,7 @@ vim.opt.hlsearch = true
 -- Folding / folds
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-vim.opt.foldcolumn = "1"
+vim.opt.foldcolumn = "0"
 vim.opt.foldlevel = 42
 vim.opt.foldlevelstart = 42
 vim.opt.foldnestmax = 42
@@ -93,4 +93,4 @@ end
 vim.opt.foldtext = 'v:lua.CustomFoldText()'
 vim.opt.fillchars:append({fold = " "})
 vim.opt.foldminlines = 1
-vim.opt.foldtext = ""
+-- vim.opt.foldtext = ""

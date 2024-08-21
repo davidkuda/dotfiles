@@ -46,7 +46,8 @@ vim.keymap.set('n', '<leader>tj', ':$tabnew<CR>', { desc = '[t]ab new ("down")' 
 vim.keymap.set('n', '<leader>tk', ':tabclose<CR>', { desc = '[t]ab close ("up")' })
 -- vim.keymap.set('n', '<leader>to', ':tabonly<CR>', { desc = '[t]ab '})
 vim.keymap.set('n', '<leader>th', 'gT', { desc = '[t]ab previous ("left")' })
-vim.keymap.set('n', '<leader>tl', 'gt', { desc = '[t]ab next ("right")' })
+vim.keymap.set('n', 'gh', 'gT', { desc = 'previous tab' })
+vim.keymap.set('n', 'gl', 'gt', { desc = 'next tab' })
 -- move current tab to previous position
 vim.keymap.set('n', '<leader>tH', ':-tabmove<CR>', { desc = '[t]ab move left' })
 -- move current tab to next position

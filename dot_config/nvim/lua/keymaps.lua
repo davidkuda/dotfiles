@@ -55,3 +55,6 @@ vim.keymap.set('n', '<leader>tL', ':+tabmove<CR>', { desc = '[t]ab move right' }
 
 -- folds:
 vim.keymap.set('n', '<leader>f', 'za', { desc = 'toggle [f]old' })
+
+-- close a window:
+vim.keymap.set('n', '<C-x>', ':x<CR>', { desc = 'e[x]it window: close the active window' })

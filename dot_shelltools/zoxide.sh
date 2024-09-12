@@ -1,3 +1,9 @@
+if ! command -v zoxide &> /dev/null
+then
+    echo "zoxide could not be found"
+    return
+fi
+
 eval "$(zoxide init zsh)"
 
 _z_cd() {

@@ -2,13 +2,6 @@ if [[ -z $TMUX ]]; then
     tmux new-session -A -s "$USER"
 fi
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 for f in $(ls $HOME/.shelltools); do
     if [[ $f == *.sh ]]; then
       source $HOME/.shelltools/$f
@@ -18,7 +11,26 @@ done
 bindkey -v
 bindkey '^x^x' edit-command-line
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+if command -v starship &> /dev/null; then
+	eval "$(starship init zsh)"
+fi
+
+export PATH=$PATH:$HOME/bin/nvim-linux64/bin/
+
+for f in $(ls $HOME/.shelltools/source-at-the-end/); do
+    if [[ $f == *.sh ]]; then
+      source $HOME/.shelltools/source-at-the-end/$f
+    fi
+done
+
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.zsh_history
+setopt appendhistory
+setopt incappendhistory
+setopt sharehistory
+setopt hist_ignore_all_dups
+setopt hist_reduce_blanks
+

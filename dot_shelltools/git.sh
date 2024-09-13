@@ -1,4 +1,21 @@
-alias gco='git checkout branch'
+alias g=git
+
+alias gs='git status'
+alias gst='git status'
+
+alias ga='git add'
+
+alias gc='git commit'
+alias gca='git commit --amend'
+
+alias gd='git diff'
+alias gds='git diff --staged'
+
+alias gco='git checkout'
+alias gcb='git checkout -b'
+alias gcm='git checkout main'
+alias gcd='git checkout develop'
+
 alias gl='git pull'
 alias gp='git push'
 

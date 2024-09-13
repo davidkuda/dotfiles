@@ -23,6 +23,14 @@ sudo apt install -y \
 # ripgrep:
 brew install ripgrep
 
+brew install zoxide
+echo 'eval $(zoxide init zsh)' >> $PLUGINSDIR
+
+brew install fzf
+echo 'source <(fzf --zsh)' >> $PLUGINSDIR
+
+brew install sqlite
+
 
 # zsh plugins:
 mkdir -p $HOME/.shelltools
@@ -37,8 +45,4 @@ echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlight
 brew install --quiet zsh-autosuggestions
 echo "source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> $PLUGINSDIR
 
-brew install zoxide
-echo 'eval $(zoxide init zsh)' >> $PLUGINSDIR
-
-brew install fzf
-echo 'source <(fzf --zsh)' >> $PLUGINSDIR
+git clone git@github.com:larkery/zsh-histdb.git $HOME/.shelltools/zsh-histdb

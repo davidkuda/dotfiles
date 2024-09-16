@@ -1,0 +1,23 @@
+right_format = "$kubernetes"
+
+[character]
+success_symbol = '[❯](bold #3e8fb0)'
+error_symbol = '[❯](bold #eb6f92)'
+vimcmd_symbol = '[❮](bold #3e8fb0)'
+
+[directory]
+truncation_length = 5
+truncate_to_repo = true
+style = '#3e8fb0 bold'
+
+[kubernetes]
+disabled = false
+style = '#908caa bold'
+format = '[$symbol$context( \($namespace\))]($style)'
+
+[git_branch]
+disabled = false
+style = '#c4a7e7 bold'
+
+[git_status]
+style = '#eb6f92 bold'

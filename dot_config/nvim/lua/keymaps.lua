@@ -58,3 +58,13 @@ vim.keymap.set('n', '<leader>f', 'za', { desc = 'toggle [f]old' })
 
 -- close a window:
 vim.keymap.set('n', '<C-x>', ':x<CR>', { desc = 'e[x]it window: close the active window' })
+
+-- toggle cursor column:
+local function toggle_cursorcolumn()
+  if vim.opt_local.cursorcolumn:get() then
+    vim.opt_local.cursorcolumn = false
+  else
+    vim.opt_local.cursorcolumn = true
+  end
+end
+vim.keymap.set('n', '<Leader>tc', toggle_cursorcolumn, { noremap = true, silent = true })

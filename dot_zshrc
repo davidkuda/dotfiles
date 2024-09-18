@@ -9,6 +9,9 @@ for f in $(ls $HOME/.shelltools); do
 done
 
 bindkey -v
+
+autoload edit-command-line
+zle -N edit-command-line
 bindkey '^x^x' edit-command-line
 
 # eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

@@ -28,6 +28,7 @@ PLUGINSDIR=$HOME/.shelltools/zsh-plugins.sh
 brew install ripgrep
 brew install sqlite
 brew install yq
+brew install git-delta
 
 
 brew install direnv

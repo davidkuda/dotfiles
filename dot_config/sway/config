@@ -39,7 +39,6 @@ smart_borders no_gaps
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/warty-final-ubuntu.png fill
 #
 # Example configuration:
 #
@@ -290,5 +289,4 @@ input type:keyboard {
    repeat_delay 300
    repeat_rate 40
 }
-
 

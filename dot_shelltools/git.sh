@@ -5,6 +5,8 @@ alias gst='git status'
 
 alias ga='git add'
 
+alias gb='git branch'
+
 alias gc='git commit'
 alias gca='git commit --amend'
 
@@ -25,6 +27,39 @@ function gm {
     # $@ represents "all arguments"
     commit_msg=$@
     git commit --message "$commit_msg"
+}
+
+# gbdc -> git branch delete current
+gbdc() {
+  current_branch=$(git branch --show-current)
+
+  protected_branches="develop test master"
+
+  for branch in $protected_branches; do
+    if [ "$current_branch" = "$branch" ]; then
+      echo "Cannot delete the $current_branch branch. It is a protected branch!"
+      exit 1
+    fi
+  done
+
+  # Ask for user confirmation
+  echo "You are about to switch to the develop branch and delete the current branch \"$current_branch\"."
+  echo "Are you sure you want to proceed? (y/n)"
+  read -r confirmation
+
+  if [ "$confirmation" != "y" ] && [ "$confirmation" != "Y" ]; then
+    echo "Operation cancelled."
+    exit 1
+  fi
+
+  git checkout develop
+
+  if [ $? -ne 0 ]; then
+    echo "Failed to switch to the develop branch."
+    return 1
+  fi
+
+  git branch -d "$current_branch" 2>/dev/null || git branch -D "$current_branch"
 }
 
 # gbcp -> git branch cp -> Copy a branch to your clipboard

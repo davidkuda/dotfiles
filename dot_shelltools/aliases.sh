@@ -12,7 +12,6 @@ alias n='nvim .'
 alias v=nvim
 alias ohmy='~/.oh-my-zsh/custom/'
 alias ccp='xclip -selection clipboard'
-alias conda=$HOME/miniforge3/bin/conda
 
 # confs
 alias chere='chezmoi apply && exec zsh'

@@ -7,7 +7,7 @@ return {
     vim.o.background = 'dark' -- or 'light'
 
     -- vim.cmd.colorscheme 'solarized'
-    vim.cmd.colorscheme 'rose-pine-moon'
+    vim.cmd.colorscheme 'rose-pine'
   end,
 }
 

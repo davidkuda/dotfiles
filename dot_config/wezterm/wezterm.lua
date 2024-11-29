@@ -3,7 +3,7 @@ local config = {}
 
 config.color_scheme = 'rose-pine-moon'
 config.font = wezterm.font 'JetBrains Mono'
-config.font_size = 18
+config.font_size = 14
 config.line_height = 1.2
 config.window_decorations = "NONE"
 config.hide_tab_bar_if_only_one_tab = true

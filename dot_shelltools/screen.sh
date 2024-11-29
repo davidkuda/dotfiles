@@ -13,6 +13,6 @@ screenl() {
 screenm() {
     gsettings set org.gnome.desktop.interface cursor-size 24
     gsettings set org.gnome.desktop.interface text-scaling-factor 1
-    wezterm --config font_size=12
+    # exec wezterm --config font_size=12
     # sed -i 's/config.font_size = 21/config.font_size = 12/' $HOME/.config/wezterm/wezterm.lua
 }

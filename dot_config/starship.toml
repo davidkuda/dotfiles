@@ -1,4 +1,46 @@
-right_format = "$kubernetes"
+# right_format = "$kubernetes"
+format = """
+$username\
+$hostname\
+$localip\
+$shlvl\
+$singularity\
+$directory\
+$vcsh\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$cmake\
+$dotnet\
+$golang\
+$guix_shell\
+$helm\
+$lua\
+$python\
+$terraform\
+$nix_shell\
+$conda\
+$memory_usage\
+$azure\
+$direnv\
+$env_var\
+$sudo\
+$cmd_duration\
+$kubernetes\
+$line_break\
+$jobs\
+$battery\
+$time\
+$status\
+$os\
+$container\
+$shell\
+$character"""
 
 [character]
 success_symbol = '[❯](bold #3e8fb0)'
@@ -13,7 +55,7 @@ style = '#3e8fb0 bold'
 [kubernetes]
 disabled = false
 style = '#908caa bold'
-format = '[$symbol$context( \($namespace\))]($style)'
+format = '[ $symbol$context / ($namespace)]($style)'
 
 [git_branch]
 disabled = false

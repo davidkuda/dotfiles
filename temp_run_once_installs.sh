@@ -16,6 +16,7 @@ sudo apt install -y \
 sudo apt install -y \
 	arandr \
 	i3status \
+	swaylock \
 	rofi
 
 

@@ -256,7 +256,7 @@ bar {
 include /etc/sway/config.d/*
 
 
-font pango:Iosevka Custom 10
+font pango:Iosevka Custom 16
 
 
 # Basic color configuration using the Base16 variables for windows and borders.
@@ -270,12 +270,13 @@ client.background       $base07
 
 
 input type:keyboard {
-   xkb_layout us,ch
-   xkb_options grp:shifts_toggle
-   xkb_options ctrl:nocaps
-
-   repeat_delay 300
-   repeat_rate 40
+    xkb_layout us,ch
+    xkb_options grp:shifts_toggle
+    xkb_options ctrl:nocaps
+    # xkb_variant altgr-intl
+    # xkb_options compose:ralt
+    repeat_delay 300
+    repeat_rate 40
 }
 
 input type:touchpad {

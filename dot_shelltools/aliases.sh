@@ -2,6 +2,8 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
+alias t=terraform
+
 alias -g L='| less -S'
 alias -g G='| grep -i'
 

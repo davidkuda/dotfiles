@@ -15,6 +15,9 @@ return {
           if vim.bo[buf].filetype == 'harpoon' then
             return false
           end
+          if vim.bo[buf].filetype == 'oil' then
+            return false
+          end
           -- ... the rest of your condition code
         end,
       }
@@ -40,12 +43,18 @@ return {
 
   { 'akinsho/git-conflict.nvim', version = '*', config = true },
 
-  -- Highlight todo, notes, etc in comments
+-- NOTE:
+  -- Highlight TODO, NOTE, FIX, HACK, etc in comments
   {
     'folke/todo-comments.nvim',
     event = 'VimEnter',
     dependencies = { 'nvim-lua/plenary.nvim' },
-    opts = { signs = false },
+    opts = {
+      signs = true,
+      keywords = {
+        TODO = { icon = ' ', color = 'test' },
+      },
+    },
   },
   {
     'windwp/nvim-autopairs',

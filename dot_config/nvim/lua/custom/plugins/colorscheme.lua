@@ -1,5 +1,6 @@
 return {
   -- 'maxmx03/solarized.nvim',
+  -- 'catppuccin/nvim',
   'rose-pine/neovim',
   lazy = false,
   priority = 1000,

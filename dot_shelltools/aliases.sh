@@ -3,6 +3,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 alias t=terraform
+alias taa='terraform apply -auto-approve'
 
 alias -g L='| less -S'
 alias -g G='| grep -i'

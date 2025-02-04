@@ -1,9 +1,9 @@
 #!/bin/bash
 
 swaylock \
-	--color 31748f \
+	--color 191724 \
 	--indicator-radius 250 \
 	--indicator-thickness 80 \
-	--ring-color ebbcba \
-	--key-hl-color ebbcba
+	--ring-color eb6f92 \
+	--key-hl-color 1f1d2e
 

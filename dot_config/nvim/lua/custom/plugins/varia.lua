@@ -5,6 +5,12 @@
 return {
 
   {
+    'chentoast/marks.nvim',
+    event = 'VeryLazy',
+    opts = {},
+  },
+
+  {
     'Pocco81/auto-save.nvim',
     config = function()
       require('auto-save').setup {
@@ -43,7 +49,7 @@ return {
 
   { 'akinsho/git-conflict.nvim', version = '*', config = true },
 
--- NOTE:
+  -- NOTE:
   -- Highlight TODO, NOTE, FIX, HACK, etc in comments
   {
     'folke/todo-comments.nvim',

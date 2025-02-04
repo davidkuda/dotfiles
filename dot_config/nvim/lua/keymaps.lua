@@ -68,3 +68,7 @@ local function toggle_cursorcolumn()
   end
 end
 vim.keymap.set('n', '<Leader>tc', toggle_cursorcolumn, { noremap = true, silent = true })
+
+
+-- David's InsertMode KeyMaps:
+vim.keymap.set('i', ',,', '<Esc>A,<Enter>i')

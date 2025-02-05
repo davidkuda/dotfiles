@@ -4,6 +4,7 @@ alias ....='cd ../../..'
 
 alias t=terraform
 alias taa='terraform apply -auto-approve'
+alias to='terraform output -json | jq ".mod.value"'
 
 alias -g L='| less -S'
 alias -g G='| grep -i'

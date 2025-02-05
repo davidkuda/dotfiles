@@ -9,7 +9,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term wezterm
+set $term ghostty
 set $menu rofi -show drun | xargs swaymsg exec --
 
 

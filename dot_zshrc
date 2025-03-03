@@ -22,6 +22,7 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 
 autoload edit-command-line
 zle -N edit-command-line
+# default is CTRL-X CTRL-E
 bindkey '^x^x' edit-command-line
 
 # eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

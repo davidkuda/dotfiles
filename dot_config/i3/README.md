@@ -18,4 +18,7 @@ xinput --set-prop 10 191 2 0 0 0 2 0 0 0 1
 # update: libinput Accel Speed (337)
 xinput --set-prop 10 337 0.5
 
+
+# screenshots:
+flameshot gui
 ```

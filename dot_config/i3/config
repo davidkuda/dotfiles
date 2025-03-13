@@ -161,3 +161,4 @@ bar {
 
 exec --no-startup-id "setxkbmap -layout eu"
 exec  "xrandr --output HDMI-1 --primary --output eDP-1 --off"
+bindsym Print exec flameshot gui

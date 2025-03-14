@@ -7,3 +7,7 @@ sshi() {
     )
     ssh $conn
 }
+
+function pretty_path() {
+    echo $PATH | tr ':' '\n' | sort
+}

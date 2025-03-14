@@ -31,9 +31,9 @@ if command -v starship &> /dev/null; then
 	eval "$(starship init zsh)"
 fi
 
-
 {{ if eq .chezmoi.os "darwin" }}
     export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+    export PATH=/opt/homebrew/opt/postgresql@16/bin:$PATH
 {{ else if eq .chezmoi.os "linux" }}
     export PATH=$PATH:$HOME/bin/nvim-linux64/bin/
 {{ else }}

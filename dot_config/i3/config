@@ -162,3 +162,7 @@ bar {
 exec --no-startup-id "setxkbmap -layout eu"
 exec  "xrandr --output HDMI-1 --primary --output eDP-1 --off"
 bindsym Print exec flameshot gui
+bindsym Control+$mod+q exec "i3lock -c 000000"
+exec "xautolock -detectsleep -time 3 -locker \"i3lock -c 000000\""
+
+

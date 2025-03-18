@@ -1,8 +1,6 @@
-
 export EDITOR=vim
 
-# -A -> makes new-session behave like attach-session
-# if session-name already exists
+# -A -> makes new-session behave like attach-session if session-name already exists
 # -s -> session name
 if [[ -z $TMUX ]]
 then

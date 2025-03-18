@@ -53,7 +53,7 @@ truncate_to_repo = true
 style = '#3e8fb0 bold'
 
 [kubernetes]
-disabled = false
+disabled = true
 style = '#908caa bold'
 format = '[ $symbol$context / ($namespace)]($style)'
 

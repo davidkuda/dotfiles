@@ -1,3 +1,7 @@
+How to change some settings in i3:
+
+
+### xrandr: Screen Settings
 ```sh
 # set display as primary screen:
 xrandr --output HDMI-1 --primary
@@ -10,6 +14,8 @@ xrandr --output eDP-1 --auto
 xrandr --output eDP-1 --left-of HDMI-1
 
 
+### xinput: mouse settings:
+```sh
 # update mouse settings (for 4k screens):
 xinput --list --short
 xinput list-props 10
@@ -18,6 +24,15 @@ xinput --set-prop 10 191 2 0 0 0 2 0 0 0 1
 # update: libinput Accel Speed (337)
 xinput --set-prop 10 337 0.5
 
+
+### anything else:
+```sh
+# use EU keyboard for äëöü (alt + letter):
+setxkbmap -layout eu
+
+# stdout to clipboard:
+alias ccp='xclip -selection clipboard'
+echo hi | ccp
 
 # screenshots:
 flameshot gui

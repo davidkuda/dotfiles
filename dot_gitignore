@@ -1,5 +1,7 @@
+todos.md
 temp/
 tmp/
-todos.md
 *.temp
 *.tmp
+tmp*.sh
+temp*.sh

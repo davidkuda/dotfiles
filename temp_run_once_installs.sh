@@ -69,6 +69,7 @@ append "\n"
 
 
 brew install fzf
+$(brew --prefix)/opt/fzf/install
 append "# fzf:"
 append 'source <(fzf --zsh)'
 append "\n"

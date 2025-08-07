@@ -15,6 +15,9 @@ return {
               -- returns a table (see below)
               command = { 'zsh' },
             },
+            sql = {
+              command = { 'zsh' },
+            },
           },
           -- How the repl window will be displayed
           -- See below for more information

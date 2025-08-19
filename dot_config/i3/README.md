@@ -66,4 +66,7 @@ xset s noblank
 xset s off
 # Disable DPMS (Display Power Management Signaling)
 xset -dpms
+
+# or in one line:
+xset -dpms; xset s off; xset s noblank
 ```

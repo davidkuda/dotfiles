@@ -41,7 +41,8 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec ghostty
 
 # kill focused window
 bindsym $mod+q kill
@@ -129,7 +130,10 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec --no-startup-id /home/davidkuda/.config/i3/i3exit.sh
+
+
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -158,12 +162,18 @@ bindsym $mod+r mode "resize"
 #         status_command i3status
 #         position top
 # }
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-
-exec --no-startup-id "setxkbmap -layout eu"
 bindsym Print exec flameshot gui
+
 bindsym Control+$mod+q exec "i3lock -c 232136"
 exec "xautolock -detectsleep -time 30 -locker \"i3lock -c 232136\""
-exec --no-startup-id numlockx on
-exec --no-startup-id picom --config ~/.config/picom/picom.conf
+
+exec_always --no-startup-id numlockx on
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
+exec_always --no-startup-id "setxkbmap -layout eu"
+exec_always --no-startup-id setxkbmap -option ctrl:nocaps
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Remove borders and title bars globally
+for_window [class=".*"] border pixel 0
+new_window pixel 0

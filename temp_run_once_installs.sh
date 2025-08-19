@@ -17,7 +17,13 @@ sudo apt install -y \
 	arandr \
 	i3status \
 	swaylock \
-	rofi
+	rofi \
+	autorandr \
+	flameshot \
+	build-essential \
+	picom \
+	git \
+	jq
 
 
 # TODO: is zsh installed? do we need to chsh?

@@ -1,7 +1,7 @@
 return {
   -- 'maxmx03/solarized.nvim',
-  'catppuccin/nvim',
-  -- 'rose-pine/neovim',
+  -- 'catppuccin/nvim',
+  'rose-pine/neovim',
   -- 'rose-pine-moon/neovim',
   lazy = false,
   priority = 1000,
@@ -9,8 +9,8 @@ return {
     vim.o.background = 'dark' -- or 'light'
 
     -- vim.cmd.colorscheme 'solarized'
-    -- vim.cmd.colorscheme 'rose-pine'
-    vim.cmd.colorscheme 'catppuccin-macchiato'
+    vim.cmd.colorscheme 'rose-pine-moon'
+    -- vim.cmd.colorscheme 'catppuccin-macchiato'
     -- vim.cmd.colorscheme 'catppuccin-latte'
   end,
 }

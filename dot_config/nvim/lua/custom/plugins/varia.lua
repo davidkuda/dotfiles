@@ -1,4 +1,9 @@
 return {
+  -- {
+  --   'karb94/neoscroll.nvim',
+  --   opts = {},
+  -- },
+
   {
     'petertriho/nvim-scrollbar',
     opts = {},

@@ -39,6 +39,49 @@ xinput --set-prop "VEN_06CB:00 06CB:CEEC Touchpad" "libinput Natural Scrolling E
 
 ```
 
+### Audio Volume
+
+On my ubuntu installation, I have pipewire.
+
+```sh
+# check whether any pulse or pipewire process is running:
+ps -e | grep -E "pulse|pipewire"
+```
+
+```console
+   3141 ?        00:00:01 pipewire
+   3142 ?        00:00:00 pipewire
+   3147 ?        00:00:01 pipewire-pulse
+```
+
+pipewire uses `wpctl` as its CLI API.
+
+```sh
+wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+```
+
+If you use PulseAudio with pactl, here are the settings to update audio volume:
+
+```sh
+# Use pactl to adjust volume in PulseAudio.
+pactl set-sink-volume @DEFAULT_SINK@ +10%
+pactl set-sink-volume @DEFAULT_SINK@ -10%
+pactl set-sink-mute @DEFAULT_SINK@ toggle
+pactl set-source-mute @DEFAULT_SOURCE@ toggle
+```
+
+```i3config
+# Use pactl to adjust volume in PulseAudio.
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+```
+
+
 
 ### anything else:
 ```sh

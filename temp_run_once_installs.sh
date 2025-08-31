@@ -10,20 +10,20 @@
 # (brew is not available on raspberry pi.)
 sudo apt update
 sudo apt install -y \
-	build-essential \
-	xclip
-
-sudo apt install -y \
 	arandr \
-	i3status \
-	swaylock \
-	rofi \
 	autorandr \
-	flameshot \
 	build-essential \
-	picom \
+	build-essential \
+	flameshot \
 	git \
-	jq
+	i3status \
+	jq \
+	numlockx
+	picom \
+	remmina \
+	rofi \
+	swaylock \
+	xclip \
 
 
 # TODO: is zsh installed? do we need to chsh?

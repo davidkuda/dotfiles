@@ -8,6 +8,10 @@
 # TODO: Check whether it's a debian OS before executing apt ...
 # or create a separate file for brew and one for apt.
 # (brew is not available on raspberry pi.)
+# also, it might be good to branch into i3/x vs sway/wayland.
+
+# mpv => play videos
+
 sudo apt update
 sudo apt install -y \
 	arandr \
@@ -18,12 +22,13 @@ sudo apt install -y \
 	git \
 	i3status \
 	jq \
-	numlockx
+	mpv \
+	numlockx \
 	picom \
 	remmina \
 	rofi \
 	swaylock \
-	xclip \
+	xclip
 
 
 # TODO: is zsh installed? do we need to chsh?

@@ -4,8 +4,8 @@ configuration {
 	modi:             "run,window,combi";
 	kb-accept-entry:  "Return,KP_Enter";  /* remove Ctrl+j from here */
 	kb-remove-to-eol: "";                 /* free up Ctrl+k */
-	kb-row-up:        "Control+k";
-	kb-row-down:      "Control+j";
+	kb-row-up:        "Control+p";
+	kb-row-down:      "Control+n";
 }
 
 * {

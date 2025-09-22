@@ -1,7 +1,7 @@
 How to change some settings in i3:
 
 
-### xrandr: Screen Settings
+## xrandr: Screen Settings
 ```sh
 # enable attached screen:
 xrandr --output HDMI-1 --auto
@@ -19,7 +19,7 @@ xrandr --output eDP-1 --left-of HDMI-1
 ```
 
 
-### xinput: mouse settings:
+## xinput: mouse settings:
 ```sh
 # update mouse settings (for 4k screens):
 xinput --list --short
@@ -36,10 +36,9 @@ xinput --set-prop 10 337 0.7
 xinput --set-prop 10 "libinput Accel Speed" 0.5
 
 xinput --set-prop "VEN_06CB:00 06CB:CEEC Touchpad" "libinput Natural Scrolling Enabled" 1
-
 ```
 
-### Audio Volume
+## Audio
 
 On my ubuntu installation, I have pipewire.
 
@@ -57,10 +56,75 @@ ps -e | grep -E "pulse|pipewire"
 pipewire uses `wpctl` as its CLI API.
 
 ```sh
+wpctl status
+```
+
+- **Sinks:** outputs (speakers, headphones)
+- **Sources:** inputs (microphones)
+
+change default sink:
+
+```sh
+wpctl set-default 67
+```
+
+move existing stream to another sink: (changing the default will also update the stream)
+
+```sh
+# first arg: stream node
+# second node: sink
+wpctl move-node 102 67
+```
+
+### Clients
+
+In wpctl status, Clients are the applications or processes currently connected to the PipeWire server.
+
+Each client is a program that either:
+- Plays audio (sink input), e.g. Brave, Spotify, mpv.
+- Captures audio (source output), e.g. Zoom, Firefox when using a mic.
+- Manages session (like WirePlumber).
+- Displays information (like polybar).
+
+```console
+PipeWire 'pipewire-0' [1.0.5, davidkuda@davidkuda-Latitude-5440, cookie:225073596]
+ └─ Clients:
+        32. pipewire                            [1.0.5, davidkuda@davidkuda-Latitude-5440, pid:3545]
+        34. WirePlumber                         [1.0.5, davidkuda@davidkuda-Latitude-5440, pid:3542]
+        35. WirePlumber [export]                [1.0.5, davidkuda@davidkuda-Latitude-5440, pid:3542]
+        44. polybar                             [1.0.5, davidkuda@davidkuda-Latitude-5440, pid:13907]
+        45. xdg-desktop-portal                  [1.0.5, davidkuda@davidkuda-Latitude-5440, pid:4244]
+        59. wpctl                               [1.0.5, davidkuda@davidkuda-Latitude-5440, pid:148003]
+        66. Brave input                         [1.0.5, davidkuda@davidkuda-Latitude-5440, pid:86213]
+```
+
+Example from your list:
+- 32. pipewire → the core daemon itself.
+- 34. WirePlumber → session manager that enforces policy (default devices, routing).
+- 44. polybar → your bar reads audio info.
+- 45. xdg-desktop-portal → used for screen/audio sharing.
+- 66. Brave input → Brave browser wants access to microphone.
+- 59. wpctl → the CLI tool you ran.
+
+So Clients = software currently talking to PipeWire.
+
+Do you want me to also explain how to see which client is mapped to which sink/source so you can move individual app streams?
+
+### Volume
+
+```sh
 wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
 wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+```
+
+Toggle mic mute:
+
+```sh
 wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 ```
+
+
+### pactl
 
 If you use PulseAudio with pactl, here are the settings to update audio volume:
 
@@ -82,8 +146,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 ```
 
 
-
-### anything else:
+## anything else:
 ```sh
 # use EU keyboard for äëöü (alt + letter):
 setxkbmap -layout eu

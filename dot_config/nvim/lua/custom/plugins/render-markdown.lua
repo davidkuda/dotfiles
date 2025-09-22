@@ -8,17 +8,22 @@ return {
 			heading = {
 				width = "block",
 				position = "inline",
-				left_pad = 2,
+				left_pad = 0,
 				right_pad = 2,
 			},
 			code = {
 				style = "full",
-				position = "right",
 				width = "block",
-				left_margin = 2,
-				left_pad = 2,
+				left_margin = 0,
+				left_pad = 0,
 				right_pad = 2,
 				min_width = 60,
+				conceal_delimiters = false,
+				border = 'thin',
+
+			},
+			sign = {
+				enabled = false,
 			},
 		},
 	},

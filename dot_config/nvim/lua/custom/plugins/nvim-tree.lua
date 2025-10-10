@@ -28,6 +28,6 @@ return {
       },
     }
 
-    vim.keymap.set('n', '<Leader>-', '<CMD>NvimTreeToggle<CR>')
+    vim.keymap.set('n', '<Leader>m', '<CMD>NvimTreeToggle<CR>')
   end,
 }

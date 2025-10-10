@@ -13,8 +13,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Set tab width to 4 for Go files
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "go",
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'go',
   callback = function()
     vim.o.tabstop = 4
     vim.o.shiftwidth = 4
@@ -22,3 +22,12 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- Set tab width to 4 for Go files
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'html',
+  callback = function()
+    vim.o.tabstop = 2
+    vim.o.shiftwidth = 2
+    vim.o.expandtab = true
+  end,
+})

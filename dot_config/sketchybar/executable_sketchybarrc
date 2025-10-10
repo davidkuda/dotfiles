@@ -7,12 +7,17 @@ COLOR_BASE="0xAA232136"
 COLOR_TEXT="0xFFe0def4"
 COLOR_MUTED="0xAA6e6a86"
 COLOR_IRIS="0xAAc4a7e7"
+COLOR_ROSE="0xAAeb6f92"
+COLOR_PINE="0xAA3e8fb0"
+COLOR_TRANSPARENT="0x000000ff"
 
-sketchybar --bar \
-    position=top \
-    height=40 \
-    blur_radius=30 \
-    color=$COLOR_BASE
+# settings: https://felixkratz.github.io/SketchyBar/config/bar
+sketchybar                    \
+    --bar                     \
+    position=top              \
+    height=40                 \
+    blur_radius=30            \
+    color=$COLOR_TRANSPARENT
 
 # For a full list of all available item properties see:
 # https://felixkratz.github.io/SketchyBar/config/items
@@ -27,38 +32,55 @@ default=(
     icon.padding_right=4
     label.padding_left=4
     label.padding_right=4
+    background.color=$COLOR_PINE
+    background.corner_radius=42
+    background.height=28
 )
 sketchybar --default "${default[@]}"
 
+# ----------------------------------------------------------------------------------- #
+# --- Left Items: ------------------------------------------------------------------- #
 
-# - - - Right Items - - - #
+sketchybar --add event aerospace_workspace_change
+    for sid in web ghostty 3 4 5 6 7 8 9; do
+        sketchybar                                              \
+            --add item space.$sid left                          \
+            --subscribe space.$sid aerospace_workspace_change   \
+            --set space.$sid                                    \
+            label="$sid"                                        \
+            label.color=$COLOR_MUTED                            \
+            background.drawing=off                              \
+            click_script="aerospace workspace $sid"             \
+            script="$CONFIG_DIR/plugins/aerospace.sh $sid"
+    done
+aerospace_workspace_change
+
 sketchybar \
-    --add item clock right \
-    --set clock update_freq=10 script="$PLUGIN_DIR/clock.sh" \
-    --add item volume right \
-    --set volume script="$PLUGIN_DIR/volume.sh" \
-    --subscribe volume volume_change \
-    --add item battery right \
-    --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
+    --set space.$(aerospace list-workspaces --focused) \
+    label.color=$COLOR_TEXT
+
+
+# ----------------------------------------------------------------------------------- #
+# --- Right Items: ------------------------------------------------------------------ #
+sketchybar \
+    --add item clock right                                     \
+    --set clock update_freq=10 script="$PLUGIN_DIR/clock.sh"   \
+    background.corner_radius=42                                \
+    label.padding_left=8                                       \
+    label.padding_right=8                                      \
+                                                               \
+    --add item volume right                       \
+    --set volume script="$PLUGIN_DIR/volume.sh"   \
+    icon.padding_left=12                          \
+    label.padding_right=12                        \
+    --subscribe volume volume_change              \
+                                                  \
+    --add item battery right                                        \
+    --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh"   \
+    icon.padding_left=12                                            \
+    label.padding_right=12                                          \
     --subscribe battery system_woke power_source_change
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
 
-sketchybar --add event aerospace_workspace_change
-
-for sid in web ghostty 3 4 5 6 7 8 9; do
-    sketchybar \
-        --add item space.$sid left \
-        --subscribe space.$sid aerospace_workspace_change \
-        --set space.$sid \
-        label="$sid" \
-        label.color=$COLOR_MUTED \
-        background.drawing=off \
-        click_script="aerospace workspace $sid" \
-        script="$CONFIG_DIR/plugins/aerospace.sh $sid"
-done
-
-sketchybar \
-    --set space.$(aerospace list-workspaces --focused) \
-    label.color=$COLOR_TEXT

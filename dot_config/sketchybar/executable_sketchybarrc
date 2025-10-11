@@ -9,7 +9,8 @@ COLOR_MUTED="0xAA6e6a86"
 COLOR_IRIS="0xAAc4a7e7"
 COLOR_ROSE="0xAAeb6f92"
 COLOR_PINE="0xAA3e8fb0"
-COLOR_TRANSPARENT="0x000000ff"
+COLOR_TRANSPARENT="0x00000000"
+COLOR_HALF_TRANSPARENT="0x55000000"
 
 # settings: https://felixkratz.github.io/SketchyBar/config/bar
 sketchybar                    \
@@ -32,8 +33,8 @@ default=(
     icon.padding_right=4
     label.padding_left=4
     label.padding_right=4
-    background.color=$COLOR_PINE
-    background.corner_radius=42
+    background.color=$COLOR_HALF_TRANSPARENT
+    background.corner_radius=3
     background.height=28
 )
 sketchybar --default "${default[@]}"
@@ -49,7 +50,8 @@ sketchybar --add event aerospace_workspace_change
             --set space.$sid                                    \
             label="$sid"                                        \
             label.color=$COLOR_MUTED                            \
-            background.drawing=off                              \
+            label.padding_right=12                              \
+            background.color=$COLOR_BASE                        \
             click_script="aerospace workspace $sid"             \
             script="$CONFIG_DIR/plugins/aerospace.sh $sid"
     done
@@ -65,9 +67,6 @@ sketchybar \
 sketchybar \
     --add item clock right                                     \
     --set clock update_freq=10 script="$PLUGIN_DIR/clock.sh"   \
-    background.corner_radius=42                                \
-    label.padding_left=8                                       \
-    label.padding_right=8                                      \
                                                                \
     --add item volume right                       \
     --set volume script="$PLUGIN_DIR/volume.sh"   \

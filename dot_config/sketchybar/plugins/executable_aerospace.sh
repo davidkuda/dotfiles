@@ -2,38 +2,42 @@
 
 COLOR_TEXT="0xFFe0def4"
 COLOR_SUBTLE="0xFF908caa"
-COLOR_MUTED="0xAA6e6a86"
+COLOR_MUTED="0xFF6e6a86"
 
 
-# text if active:
-active_space=$(aerospace list-workspaces --focused)
-sketchybar --set space.$active_space label.color=$COLOR_TEXT
+echo something
 
-# subtle if space has windows:
-has_windows=$( \
-    aerospace list-workspaces \
-	--monitor all \
-	--empty no \
-	--visible no \
-)
-for space in $has_windows; do
-    sketchybar --set space.$space label.color=$COLOR_SUBTLE
-done
-
-# muted if space is empty:
+# remove empty spaces:
 empty=$( \
-    aerospace list-workspaces \
+	aerospace list-workspaces \
 	--monitor all \
 	--empty \
 	--visible no \
 )
 for space in $empty; do
-    sketchybar --set space.$space label.color=$COLOR_MUTED
+    sketchybar --remove space.$space
 done
 
-# if [ "$1" = "$FOCUSED_WORKSPACE" ]; then
-#     sketchybar --set $NAME label.color=$COLOR_TEXT
-# else
-#     sketchybar --set $NAME label.color=$COLOR_MUTED
-# fi
+
+# add spaces with windows:
+has_windows=$( \
+	aerospace list-workspaces \
+	--monitor all \
+	--empty no \
+	--visible no \
+)
+for space in $has_windows; do
+	sketchybar \
+	--add space.$space \
+	label.color=$COLOR_SUBTLE \
+	background.border_width=0
+done
+
+# highlight active window:
+active_space=$(aerospace list-workspaces --focused)
+sketchybar \
+	--add space.$active_space \
+	label.color=$COLOR_TEXT \
+	background.border_color=$COLOR_MUTED \
+	background.border_width=1
 

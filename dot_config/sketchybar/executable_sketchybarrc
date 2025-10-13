@@ -1,5 +1,5 @@
 # get inspired at: https://github.com/FelixKratz/dotfiles
-CONFIG_DIR=~/.config/sketchybar/
+CONFIG_DIR=~/.config/sketchybar
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 
 # rose pine moon color theme
@@ -41,29 +41,27 @@ sketchybar --default "${default[@]}"
 
 # ----------------------------------------------------------------------------------- #
 # --- Left Items: ------------------------------------------------------------------- #
+#
 
 sketchybar --add event aerospace_workspace_change
-    for sid in web ghostty 3 4 5 6 7 8 9; do
-        sketchybar                                              \
-            --add item space.$sid left                          \
-            --subscribe space.$sid aerospace_workspace_change   \
-            --set space.$sid                                    \
-            label="$sid"                                        \
-            label.color=$COLOR_MUTED                            \
-            label.padding_right=12                              \
-            background.color=$COLOR_BASE                        \
-            click_script="aerospace workspace $sid"             \
-            script="$CONFIG_DIR/plugins/aerospace.sh $sid"
-    done
-aerospace_workspace_change
 
+echo init
+# Init AeroSpace:
+for sid in web ghostty 3 4 5 6 7 8 9; do
 sketchybar \
-    --set space.$(aerospace list-workspaces --focused) \
-    label.color=$COLOR_TEXT
+    --add item aerospace.$sid left \
+    --set aerospace.$sid \
+        label="$sid" \
+        label.padding_right=12 \
+        script="$CONFIG_DIR/plugins/aerospace-2.sh" \
+    --subscribe aerospace.$sid aerospace_workspace_change
+done
 
 
 # ----------------------------------------------------------------------------------- #
 # --- Right Items: ------------------------------------------------------------------ #
+echo echo dir "$PLUGIN_DIR/volume.sh"
+
 sketchybar \
     --add item clock right                                     \
     --set clock update_freq=10 script="$PLUGIN_DIR/clock.sh"   \
@@ -80,6 +78,6 @@ sketchybar \
     label.padding_right=12                                          \
     --subscribe battery system_woke power_source_change
 
-##### Force all scripts to run the first time (never do this in a script) #####
+
 sketchybar --update
 

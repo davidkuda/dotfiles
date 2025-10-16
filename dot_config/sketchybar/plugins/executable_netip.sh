@@ -22,11 +22,10 @@ else
 	LABEL="Not Connected"
 fi
 
-sketchybar --set $NAME background.color=$COLOR \
+sketchybar --set $NAME \
 	icon=$ICON \
 	label="$LABEL"
 
 sketchybar --set ip_address \
-    background.color="0xAAc4a7e7" \
 	icon= \
-	label=123.123.123.123
+	label=$IP_ADDRESS

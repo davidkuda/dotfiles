@@ -41,13 +41,10 @@ sketchybar --default "${default[@]}"
 
 # ----------------------------------------------------------------------------------- #
 # --- Left Items: ------------------------------------------------------------------- #
-#
-
 sketchybar --add event aerospace_workspace_change
 
-echo init
 # Init AeroSpace:
-for sid in web ghostty 3 4 5 6 7 8 9; do
+for sid in 1 2 3 4 5; do
 sketchybar \
     --add item aerospace.$sid left \
     --set aerospace.$sid \
@@ -77,6 +74,19 @@ sketchybar \
     icon.padding_left=12                                            \
     label.padding_right=12                                          \
     --subscribe battery system_woke power_source_change
+
+sketchybar \
+    --add item  ip_address right \
+    --set ip_address script="$PLUGIN_DIR/netip.sh" \
+        update_freq=30 \
+        padding_left=2 \
+        padding_right=8 \
+   --subscribe ip_address wifi_change
+
+sketchybar -m --add item net right \
+              --set net script="~/.config/sketchybar/plugins/net.sh" \
+                                background.color=0xff3B4252 \
+                                background.height=20
 
 
 sketchybar --update

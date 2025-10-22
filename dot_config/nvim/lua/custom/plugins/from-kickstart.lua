@@ -69,6 +69,7 @@ return {
         'vim',
         'vimdoc',
         'terraform',
+        'dockerfile',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,

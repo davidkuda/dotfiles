@@ -31,22 +31,6 @@ return {
               margin = ' ',
             }
           end),
-          line.spacer(),
-          line.wins_in_tab(line.api.get_current_tab()).foreach(function(win)
-            return {
-              line.sep('', theme.win, theme.fill),
-              win.is_current() and '' or '',
-              win.buf_name(),
-              line.sep('', theme.win, theme.fill),
-              hl = theme.win,
-              margin = ' ',
-            }
-          end),
-          {
-            line.sep('', theme.tail, theme.fill),
-            { '  ', hl = theme.tail },
-          },
-          hl = theme.fill,
         }
       end,
       dependencies = 'nvim-tree/nvim-web-devicons',

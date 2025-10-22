@@ -9,6 +9,7 @@ return {
     require('nvim-tree').setup {
 
       view = {
+        -- width = 30,
         width = 80,
         float = {
           enable = true,
@@ -21,10 +22,6 @@ return {
 
       renderer = {
         group_empty = true,
-      },
-
-      filters = {
-        dotfiles = true,
       },
     }
 

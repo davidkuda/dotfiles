@@ -1,77 +1,88 @@
 return {
-  -- {
-  --   'karb94/neoscroll.nvim',
-  --   opts = {},
-  -- },
+	-- {
+	--   'karb94/neoscroll.nvim',
+	--   opts = {},
+	-- },
 
-  {
-    'petertriho/nvim-scrollbar',
-    opts = {},
-  },
+	{
+		"windwp/nvim-ts-autotag",
+		lazy = false,
+		opts = {
+			opts = {
+				enable_close = true,
+				enable_rename = true,
+				enable_close_on_slash = false,
+			}
+		},
+	},
+	{
+		"petertriho/nvim-scrollbar",
+		opts = {},
+	},
 
-  {
-    'chentoast/marks.nvim',
-    event = 'VeryLazy',
-    opts = {},
-  },
+	{
+		"chentoast/marks.nvim",
+		event = "VeryLazy",
+		opts = {},
+	},
 
-  {
-    'Pocco81/auto-save.nvim',
-    config = function()
-      require('auto-save').setup {
-        -- your config goes here
-        -- or just leave it empty :)
-        -- make it compatible with harpoon (https://github.com/ThePrimeagen/harpoon/issues/434):
-        condition = function(buf)
-          if vim.bo[buf].filetype == 'harpoon' then
-            return false
-          end
-          if vim.bo[buf].filetype == 'oil' then
-            return false
-          end
-          -- ... the rest of your condition code
-        end,
-      }
-    end,
-  },
+	{
+		"Pocco81/auto-save.nvim",
+		config = function()
+			require("auto-save").setup({
+				-- your config goes here
+				-- or just leave it empty :)
+				-- make it compatible with harpoon (https://github.com/ThePrimeagen/harpoon/issues/434):
+				condition = function(buf)
+					if vim.bo[buf].filetype == "harpoon" then
+						return false
+					end
+					if vim.bo[buf].filetype == "oil" then
+						return false
+					end
+					-- ... the rest of your condition code
+				end,
+			})
+		end,
+	},
 
-  {
-    'azabiong/vim-highlighter',
-    init = function() end,
-    -- vim.cmd([[
-    -- let HiSet   = 'f<CR>'
-    -- let HiErase = 'f<BS>'
-    -- let HiClear = 'f<C-L>'
-    -- let HiFind  = 'f<Tab>'
-    -- let HiSetSL = 't<CR>'
-    -- ]])
-    -- config = function()
-    --   vim.keymap.set("n", "<Leader>hs", "<CMD>HiSet<CR>", {desc="[h]ighlight [s]et"})
-    --   vim.keymap.set("n", "<Leader>hr", "<CMD>HiErase<CR>", {desc="[h]ighlight [r]emove"})
-    --   vim.keymap.set("n", "<Leader>hl", "<CMD>HiClear<CR>", {desc="[h]ighlight c[l]ear"})
-    -- end
-  },
+	{
+		"azabiong/vim-highlighter",
+		init = function() end,
+		-- vim.cmd([[
+		-- let HiSet   = 'f<CR>'
+		-- let HiErase = 'f<BS>'
+		-- let HiClear = 'f<C-L>'
+		-- let HiFind  = 'f<Tab>'
+		-- let HiSetSL = 't<CR>'
+		-- ]])
+		-- config = function()
+		--   vim.keymap.set("n", "<Leader>hs", "<CMD>HiSet<CR>", {desc="[h]ighlight [s]et"})
+		--   vim.keymap.set("n", "<Leader>hr", "<CMD>HiErase<CR>", {desc="[h]ighlight [r]emove"})
+		--   vim.keymap.set("n", "<Leader>hl", "<CMD>HiClear<CR>", {desc="[h]ighlight c[l]ear"})
+		-- end
+	},
 
-  { 'akinsho/git-conflict.nvim', version = '*', config = true },
+	{ "akinsho/git-conflict.nvim", version = "*", config = true },
 
-  -- NOTE:
-  -- Highlight TODO, NOTE, FIX, HACK, etc in comments
-  {
-    'folke/todo-comments.nvim',
-    event = 'VimEnter',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    opts = {
-      signs = true,
-      keywords = {
-        TODO = { icon = ' ', color = 'test' },
-      },
-    },
-  },
-  {
-    'windwp/nvim-autopairs',
-    event = 'InsertEnter',
-    config = true,
-    -- use opts = {} for passing setup options
-    -- this is equalent to setup({}) function
-  },
+	-- NOTE:
+	-- Highlight TODO, NOTE, FIX, HACK, etc in comments
+	{
+		"folke/todo-comments.nvim",
+		event = "VimEnter",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		opts = {
+			signs = true,
+			keywords = {
+				TODO = { icon = " ", color = "test" },
+			},
+		},
+	},
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		config = true,
+		-- use opts = {} for passing setup options
+		-- this is equalent to setup({}) function
+	},
 }

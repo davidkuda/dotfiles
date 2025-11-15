@@ -62,6 +62,8 @@ echo echo dir "$PLUGIN_DIR/volume.sh"
 sketchybar \
     --add item clock right                                     \
     --set clock update_freq=10 script="$PLUGIN_DIR/clock.sh"   \
+    icon.padding_left=12                                       \
+    label.padding_right=12                                     \
                                                                \
     --add item volume right                       \
     --set volume script="$PLUGIN_DIR/volume.sh"   \
@@ -83,11 +85,4 @@ sketchybar \
         padding_right=8 \
    --subscribe ip_address wifi_change
 
-sketchybar -m --add item net right \
-              --set net script="~/.config/sketchybar/plugins/net.sh" \
-                                background.color=0xff3B4252 \
-                                background.height=20
-
-
 sketchybar --update
-

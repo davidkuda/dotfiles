@@ -10,7 +10,12 @@
     diffFilter = delta --color-only
 
 [delta]
-    navigate = true    # use n and N to move between diff sections
+    navigate = true
+    line-numbers = true
+    plus-style = syntax "#286983"
+    minus-style = syntax "#b4637a"
+    file-decoration-style = "#f6c177" ol
+    file-style = "#f6c177" bold
 
 [merge]
     conflictstyle = diff3

@@ -11,3 +11,13 @@ sshi() {
 function pretty_path() {
     echo $PATH | tr ':' '\n' | sort
 }
+
+function pyfmt() {
+    echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    echo "ruff format $1:"
+    uv run ruff format $1
+    echo ""
+    echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    echo "ruff check --select I --fix $1:"
+    uv run ruff check --select I --fix $1
+}

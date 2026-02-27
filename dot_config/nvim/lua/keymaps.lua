@@ -73,7 +73,7 @@ vim.keymap.set('n', '<Leader>tc', toggle_cursorcolumn, { noremap = true, silent 
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 -- David's InsertMode KeyMaps:
 -- comma comma => go down a line
-vim.keymap.set('i', ',,', '<Esc>A,<Enter>i')
+vim.keymap.set('i', ',,', '<Esc>A,<Enter>')
 
 -- Go: if err != nil {}
 vim.keymap.set('i', 'errnil', 'err != nil {}<Esc>i')

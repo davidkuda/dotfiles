@@ -19,6 +19,7 @@ set -g mouse on
 
 # source tmux conf
 bind r source-file ~/.tmux.conf; display "tmux conf reload successful"
+bind N run-shell "tmux rename-window \"$(basename #{pane_current_path})\""
 
 # start window and pane index at 1, not 0; change window with prefix-n
 set -g base-index 1

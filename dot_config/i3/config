@@ -171,7 +171,15 @@ exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id "setxkbmap -layout eu"
 exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id feh --bg-fill ~/wallpapers/rose-pine-bay.JPG
+
+bindsym $mod+m exec "/home/davidkuda/.local/bin/rofimoji --action copy"
 
 # Remove borders and title bars globally
 for_window [class=".*"] border pixel 0
 new_window pixel 0
+
+bindsym $mod+y border normal 3
+bindsym $mod+u border none
+for_window [all] title_window_icon on
+

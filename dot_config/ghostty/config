@@ -1,9 +1,17 @@
-font-size = 21
+# reload with ctrl shift ,
 window-decoration = false
 # theme = catppuccin-macchiato
-theme = rose-pine
+theme = Rose Pine
 # theme = Horizon-Bright
 # theme = catppuccin-latte
+# font-family = JetBrains Mono
+font-size = 21
+# https://ghostty.org/docs/config/reference#adjust-cell-height
+adjust-cell-height = 7
+# font-thicken = true
+# font-feature = -liga
+# window-padding-x = 20
+# window-padding-y = 20
 
 # This is the configuration file for Ghostty.
 #

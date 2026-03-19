@@ -4,6 +4,7 @@ export PATH="$PATH:$HOME/go/bin"
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH="$PATH:$HOME/.dotnet/tools"
+export PATH="$PATH:$HOME/bin"
 
 export EDITOR=vim
 export DELTA_PAGER='less -R'

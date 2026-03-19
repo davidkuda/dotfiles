@@ -17,6 +17,12 @@
     file-decoration-style = "#f6c177" ol
     file-style = "#f6c177" bold
 
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
 [merge]
     conflictstyle = diff3
 

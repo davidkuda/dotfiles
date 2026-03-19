@@ -4,6 +4,22 @@ return {
 	--   opts = {},
 	-- },
 	--
+	-- {
+	-- 	"nvim-zh/colorful-winsep.nvim",
+	-- 	config = true,
+	-- 	event = { "WinLeave" },
+	-- },
+	{
+		"dgagn/diagflow.nvim",
+		event = "LspAttach",
+		opts = {
+			scope = "line",
+			max_width = 78,
+			placement = "inline",
+			-- placement = 'top',
+			-- show_borders = true,
+		},
+	},
 	{
 		"christoomey/vim-tmux-navigator",
 		cmd = {
@@ -34,10 +50,11 @@ return {
 			},
 		},
 	},
-	{
-		"petertriho/nvim-scrollbar",
-		opts = {},
-	},
+
+	-- {
+	-- 	"petertriho/nvim-scrollbar",
+	-- 	opts = {},
+	-- },
 
 	{
 		"chentoast/marks.nvim",

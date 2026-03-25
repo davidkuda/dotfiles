@@ -10,7 +10,8 @@ alias grs='git restore --staged'
 alias gb='git branch'
 
 alias gc='git commit'
-alias gca='git commit --amend --no-edit'
+alias gca='git commit --amend'
+alias gcane='git commit --amend --no-edit'
 
 alias gd='git diff'
 alias gds='git diff --staged'

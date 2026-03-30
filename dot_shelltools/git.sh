@@ -1,3 +1,36 @@
+function gittools() {
+  echo "functions:"
+  echo ""
+  echo '    gm                     git commit --message "..."'
+  echo '    gcol                   git checkout to line'
+  echo '    gcobr                  git checkout branch remote'
+  echo '    gbdlr <branch_name>    git branch delete local remote'
+  echo '    gbcp                   git branch cp -> Copy a branch to your clipboard'
+  echo '    gbdc                   git branch delete current'
+  echo ""
+
+  echo "aliases:"
+  echo '
+    gs       git status
+    gst      git status
+    ga       git add
+    grs      git restore --staged
+    gb       git branch
+    gc       git commit
+    gca      git commit --amend
+    gcane    git commit --amend --no-edit
+    gd       git diff
+    gds      git diff --staged
+    gco      git checkout
+    gcb      git checkout -b
+    gcm      git checkout main
+    gcd      git checkout develop
+    gl       git pull
+    gp       git push
+  '
+}
+
+
 alias g=git
 
 alias gs='git status'
@@ -55,7 +88,7 @@ gbdc() {
     exit 1
   fi
 
-  git checkout develop
+  git checkout main
 
   if [ $? -ne 0 ]; then
     echo "Failed to switch to the develop branch."

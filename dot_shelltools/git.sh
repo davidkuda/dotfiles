@@ -69,7 +69,7 @@ function gm {
 gbdc() {
   current_branch=$(git branch --show-current)
 
-  protected_branches="develop test master"
+  protected_branches="develop test master main"
 
   for branch in $protected_branches; do
     if [ "$current_branch" = "$branch" ]; then
@@ -79,7 +79,7 @@ gbdc() {
   done
 
   # Ask for user confirmation
-  echo "You are about to switch to the develop branch and delete the current branch \"$current_branch\"."
+  echo "You are about to switch to the main branch and delete the current branch \"$current_branch\"."
   echo "Are you sure you want to proceed? (y/n)"
   read -r confirmation
 

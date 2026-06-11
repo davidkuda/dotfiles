@@ -76,4 +76,5 @@ vim.keymap.set('n', '<Leader>tc', toggle_cursorcolumn, { noremap = true, silent 
 vim.keymap.set('i', ',,', '<Esc>A,<Enter>')
 
 -- Go: if err != nil {}
-vim.keymap.set('i', 'errnil', 'err != nil {}<Esc>i')
+vim.keymap.set('i', 'errnil', 'err != nil {}<Esc>i<Enter>')
+vim.keymap.set('i', 'ierrn', 'if err != nil {<Enter>\treturn nil, err<Enter><Backspace>}<Esc>')

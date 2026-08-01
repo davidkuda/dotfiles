@@ -1,6 +1,8 @@
 require("options")
 require("keymaps")
 require("autocmds")
+require("vim-pack")
+require("treesitter")
 require("lazy_plugins")
 require("custom")
 require("netrw")

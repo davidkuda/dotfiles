@@ -5,7 +5,7 @@ theme = Rose Pine
 # theme = Horizon-Bright
 # theme = catppuccin-latte
 # font-family = JetBrains Mono
-font-size = 21
+font-size = 18
 # https://ghostty.org/docs/config/reference#adjust-cell-height
 adjust-cell-height = 7
 # font-thicken = true

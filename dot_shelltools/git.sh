@@ -111,10 +111,17 @@ function gbcp {
 
 # gcol -> git checkout to line
 function gcol {
-  gb | cat -n
+  gb | sort | cat -n
   echo "Enter number of branch to checkout to:"
   read line_nr
-  branch=$(gb | cat -n | sed -n "${line_nr}p" | awk '{ print $2 }' | tr -d '\n')
+  branch=$( \
+    gb \
+    | sort \
+    | cat -n \
+    | sed -n "${line_nr}p" \
+    | awk '{ print $2 }' \
+    | tr -d '\n' \
+  )
   gco $branch
 }
 

@@ -127,11 +127,11 @@ function gcol {
 
 # gcobr -> git checkout branch remote
 function gcobr () {
-  gb -r | cat -n
+  gb -r | sort | cat -n
   echo "Enter number of branch to checkout to:"
   read line_nr
   branch=$( \
-    gb -r | cat -n | \
+    gb -r | sort | cat -n | \
     sed -n "${line_nr}p" | \
     awk '{ print $2 }' | \
     sed -e "s/^origin\///" \
